@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xestra</title>
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+
+    <div class="RPS">
+        <img src="./img/paper.png" onclick="paper()">
+        <img src="./img/rock.png" onclick="rock()">
+        <img src="./img/scissors.png" onclick="scissors()">
+    </div>
+
+    <div class="other">
+        <p>Chosen: <i id="chosenItem"></i></p>
+        <br>
+        <a id="submit" onclick="submit()">Submit</a>
+        <br>
+        <i id="winner"></i>
+        <br>
+        <a id="chosenHuman"></a>
+        <a>|</a>
+        <a id="chosenMachine"></a>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
