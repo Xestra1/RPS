@@ -47,13 +47,19 @@ function scissors() {
 }
 
 function machineChoose() {
-    var random = Math.floor(Math.random() * 3);
-    if (random === 0) {
-        machine.paper = true
-    } else if (random === 1) {
+    var random = Math.floor(Math.random() * 7);
+    if (random === 0 || random === 4) {
+        machine.paper = true;
+        machine.rock = false;
+        machine.scissors = false;
+    } else if (random === 1 || random === 5) {
         machine.rock = true;
-    } else if (random === 2) {
+        machine.scissors = false;
+        machine.paper = false;
+    } else if (random === 2 || random === 6) {
         machine.scissors = true;
+        machine.paper = false;
+        machine.rock = false;
     } else {
         console.log('Heres your medal. you broke the machine');
     }
