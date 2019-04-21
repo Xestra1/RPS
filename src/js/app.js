@@ -1,14 +1,27 @@
 var human = {
     paper: false,
     rock: false,
-    scissors: false
+    scissors: false,
+    wins: 0,
+    loses: 0,
+    ties: 0
 };
 
 var machine = {
     paper: false,
     rock: false,
-    scissors: false
+    scissors: false,
+    wins: 0,
+    loses: 0,
+    ties: 0
 };
+
+document.getElementById('humanWins').innerHTML = human.wins;
+document.getElementById('humanLoses').innerHTML = human.loses;
+document.getElementById('humanTies').innerHTML = human.ties;
+document.getElementById('machineWins').innerHTML = machine.wins;
+document.getElementById('machineLoses').innerHTML = machine.loses;
+document.getElementById('machineTies').innerHTML = machine.ties;
 
 function paper() {
     if (human.paper === false && human.rock === false && human.scissors === false) {
@@ -68,31 +81,59 @@ function machineChoose() {
 function submit() {
     machineChoose();
     if (human.paper === true && machine.rock === true) {
+        human.wins++;
+        machine.loses++;
+        document.getElementById('humanWins').innerHTML = human.wins;
+        document.getElementById('machineLoses').innerHTML = machine.loses;
         document.getElementById('winner').innerHTML = "Human Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Paper";
         document.getElementById('chosenMachine').innerHTML = "Machine: Rock";
     } else if (human.rock === true && machine.scissors === true) {
+        human.wins++;
+        machine.loses++;
+        document.getElementById('humanWins').innerHTML = human.wins;
+        document.getElementById('machineLoses').innerHTML = machine.loses;
         document.getElementById('winner').innerHTML = "Human Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Rock";
         document.getElementById('chosenMachine').innerHTML = "Machine: Scissors";
     } else if (human.scissors === true && machine.paper === true) {
+        human.wins++;
+        machine.loses++;
+        document.getElementById('humanWins').innerHTML = human.wins;
+        document.getElementById('machineLoses').innerHTML = machine.loses;
         document.getElementById('winner').innerHTML = "Human Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Scissors";
         document.getElementById('chosenMachine').innerHTML = "Machine: Paper";
     } else if (machine.scissors === true && human.paper === true) {
+        human.loses++;
+        machine.wins++;
+        document.getElementById('humanLoses').innerHTML = human.loses;
+        document.getElementById('machineWins').innerHTML = machine.wins;
         document.getElementById('winner').innerHTML = "Machine Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Scissors";
         document.getElementById('chosenMachine').innerHTML = "Machine: Paper";
     } else if (machine.rock === true && human.scissors === true) {
+        human.loses++;
+        machine.wins++;
+        document.getElementById('humanLoses').innerHTML = human.loses;
+        document.getElementById('machineWins').innerHTML = machine.wins;
         document.getElementById('winner').innerHTML = "Machine Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Scissors";
         document.getElementById('chosenMachine').innerHTML = "Machine: Rock";
     } else if (machine.paper === true && human.rock === true) {
+        human.loses++;
+        machine.wins++;
+        document.getElementById('humanLoses').innerHTML = human.loses;
+        document.getElementById('machineWins').innerHTML = machine.wins;
         document.getElementById('winner').innerHTML = "Machine Wins!";
         document.getElementById('chosenHuman').innerHTML = "Human: Paper";
         document.getElementById('chosenMachine').innerHTML = "Machine: Machine";
     } else {
         console.log('Error or tie');
+        human.ties++;
+        machine.ties++;
+        document.getElementById('humanTies').innerHTML = human.ties;
+        document.getElementById('machineTies').innerHTML = machine.ties;
         document.getElementById('winner').innerHTML = "Tie!";
     }
 }
