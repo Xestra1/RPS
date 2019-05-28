@@ -1,1 +1,0 @@
-human.paper = false && human.rock = false && human.scissors = false
