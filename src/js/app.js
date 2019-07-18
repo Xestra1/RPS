@@ -1,4 +1,4 @@
-var human = {
+let human = {
     paper: false,
     rock: false,
     scissors: false,
@@ -7,7 +7,7 @@ var human = {
     ties: 0
 };
 
-var machine = {
+let machine = {
     paper: false,
     rock: false,
     scissors: false,
@@ -16,16 +16,16 @@ var machine = {
     ties: 0
 };
 
-var humanWins = document.getElementById('humanWins');
-var humanLoses = document.getElementById('humanLoses');
-var humanTies = document.getElementById('humanTies');
-var machineWins = document.getElementById('machineWins');
-var machineLoses = document.getElementById('machineLoses');
-var machineTies = document.getElementById('machineTies');
-var winner = document.getElementById('winner');
-var chosenItem = document.getElementById('chosenItem');
-var chosenHuman = document.getElementById('chosenHuman');
-var chosenMachine = document.getElementById('chosenMachine');
+const humanWins = document.getElementById('humanWins');
+const humanLoses = document.getElementById('humanLoses');
+const humanTies = document.getElementById('humanTies');
+const machineWins = document.getElementById('machineWins');
+const machineLoses = document.getElementById('machineLoses');
+const machineTies = document.getElementById('machineTies');
+const winner = document.getElementById('winner');
+const chosenItem = document.getElementById('chosenItem');
+const chosenHuman = document.getElementById('chosenHuman');
+const chosenMachine = document.getElementById('chosenMachine');
 
 
 humanWins.innerHTML = human.wins;
@@ -35,7 +35,7 @@ machineWins.innerHTML = machine.wins;
 machineLoses.innerHTML = machine.loses;
 machineTies.innerHTML = machine.ties;
 
-function paper() {
+const paper = () => {
     if (human.paper === false && human.rock === false && human.scissors === false) {
         human.paper = true;
         chosenItem.innerHTML = "Paper";
@@ -47,7 +47,7 @@ function paper() {
     }
 }
 
-function rock() {
+const rock = () => {
     if (human.paper === false && human.rock === false && human.scissors === false) {
         human.rock = true;
         chosenItem.innerHTML = "Rock";
@@ -59,7 +59,7 @@ function rock() {
     }
 }
 
-function scissors() {
+const scissors = () => {
     if (human.paper === false && human.rock === false && human.scissors === false) {
         human.scissors = true;
         chosenItem.innerHTML = "Scissors";
@@ -71,7 +71,7 @@ function scissors() {
     }
 }
 
-function machineChoose() {
+const machineChoose = () => {
     var random = Math.floor(Math.random() * 7);
     if (random === 0 || random === 4) {
         machine.paper = true;
@@ -90,7 +90,7 @@ function machineChoose() {
     }
 }
 
-function submit() {
+const submit = () => {
     machineChoose();
     if (human.paper === true && machine.rock === true) {
         human.wins++;
@@ -141,7 +141,6 @@ function submit() {
         chosenHuman.innerHTML = "Human: Paper";
         chosenMachine.innerHTML = "Machine: Machine";
     } else {
-        console.log('Error or tie');
         human.ties++;
         machine.ties++;
         humanTies.innerHTML = human.ties;
